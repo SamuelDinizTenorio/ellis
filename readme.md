@@ -12,12 +12,12 @@ Este projeto é uma API desenvolvida com FastAPI para gerenciar alunos, cursos e
 
 1. **Faça o download do repositório:**
    [Clique aqui para realizar o download](https://github.com/SamuelDinizTenorio/ellis/archive/refs/heads/main.zip)
-   
+
 2. **Crie um ambiente virtual:**
    ```sh
    python3 -m venv ./venv
    ```
-palavra chave: marvel
+
 3. **Ative o ambiente virtual:**
    - No Linux/Mac:
      ```sh
