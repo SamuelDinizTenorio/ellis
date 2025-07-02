@@ -1,0 +1,25 @@
+# Nome do projeto.
+name: gestao-escolar-api
+
+# Define os serviços (contêineres) que compõem a aplicação.
+services:
+  # Nome do nosso serviço da API.
+  api:
+    # 'build: .' instrui o Docker Compose a construir uma imagem a partir do
+    # Dockerfile localizado no diretório atual (.).
+    build: .
+    # Nome do container
+    container_name: gestao-escolar-api 
+    # Mapeia a porta 8000 da sua máquina (host) para a porta 8000 do contêiner.
+    # Isso permite que você acesse a API em http://localhost:8000.
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual ('.') no diretório '/app' dentro do contêiner.
+    # Isso sincroniza os arquivos, permitindo o live-reload do código e
+    # a persistência do banco de dados (escola.db) na sua máquina local.
+    volumes:
+      - .:/app
+    # Sobrescreve o comando padrão do Dockerfile. A flag '--reload' faz com que
+    # o servidor Uvicorn reinicie automaticamente sempre que um arquivo de código for alterado.
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    
